@@ -1,0 +1,3 @@
+# Exclude large videos that exceed GitHub's 100MB limit
+videolar/IMG_2793.MP4
+videolar/esit 222.mp4
