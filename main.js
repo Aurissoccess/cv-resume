@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-// Gold Dust Particles
+// Gold Dust Particles (Aquarium Flow Effect)
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('goldDust');
     if (!container) return;
@@ -374,16 +374,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const particle = document.createElement('div');
         particle.classList.add('gold-particle');
         
+        // Random size
         const size = Math.random() * 5 + 2;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
         
+        // Starting position anywhere inside the panel
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.top = `${Math.random() * 100}%`;
         
-        const duration = Math.random() * 6 + 4;
+        // Aquarium flow movement offsets
+        particle.style.setProperty('--dx1', `${Math.random() * 40 - 20}px`);
+        particle.style.setProperty('--dy1', `${-(Math.random() * 30 + 10)}px`);
+        particle.style.setProperty('--dx2', `${Math.random() * 80 - 40}px`);
+        particle.style.setProperty('--dy2', `${-(Math.random() * 60 + 30)}px`);
+        particle.style.setProperty('--dx3', `${Math.random() * 120 - 60}px`);
+        particle.style.setProperty('--dy3', `${-(Math.random() * 100 + 60)}px`);
+        
+        // Slower duration for water effect
+        const duration = Math.random() * 10 + 6;
         particle.style.animationDuration = `${duration}s`;
         
+        // Random delay
         particle.style.animationDelay = `${Math.random() * 5}s`;
         
         container.appendChild(particle);
@@ -394,7 +406,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, (duration + 5) * 1000);
     };
 
-    for (let i = 0; i < 40; i++) {
+    // Spawn more particles for a rich effect
+    for (let i = 0; i < 50; i++) {
         createParticle();
     }
 });
