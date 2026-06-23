@@ -73,7 +73,18 @@ const translations = {
         "media-v22": "AI Landscape Motion II",
         "contact-title": "Aloqa <span class=\"gold-text\">Uchun</span>",
         "contact-p": "Men bilan hamkorlik qilish uchun quyidagi yo'llar orqali bog'laning.",
-        "footer-text": "&copy; 2026 Ozodbek Salohiddinov. Barcha huquqlar himoyalangan."
+        "footer-text": "&copy; 2026 Ozodbek Salohiddinov. Barcha huquqlar himoyalangan.",
+        "footer-desc": "Inson salohiyatini sun'iy intellekt bilan bog'lash",
+        "footer-quick-links": "TEZKOR HAVOLALAR",
+        "footer-skills": "KO'NIKMALAR",
+        "footer-skill-1": "AI Dasturlar va Muhandislik",
+        "footer-skill-2": "Ma'lumotlar va Dasturiy Ta'minot Asoslari",
+        "footer-skill-3": "Mahsulot va Kreativ Texnologiyalar",
+        "footer-skill-4": "Liderlik va Ekosistema",
+        "footer-contact-title": "BOG'LANING",
+        "footer-contact-text": "AI sayohatingizni kuchaytirmoqchimisiz?<br>Bog'laning va birgalikda amalga oshiraylik.",
+        "footer-contact-btn": "Ozodbek Salohiddinov bilan bog'laning",
+        "footer-back-to-top": "Yuqoriga qaytish"
     },
     en: {
         "nav-home": "Home",
@@ -149,7 +160,18 @@ const translations = {
         "media-v22": "AI Landscape Motion II",
         "contact-title": "Contact <span class=\"gold-text\">Me</span>",
         "contact-p": "Get in touch with me through the following channels to collaborate.",
-        "footer-text": "&copy; 2026 Ozodbek Salohiddinov. All rights reserved."
+        "footer-text": "&copy; 2026 Ozodbek Salohiddinov. All rights reserved.",
+        "footer-desc": "Connecting human potential with artificial intelligence",
+        "footer-quick-links": "QUICK LINKS",
+        "footer-skills": "SKILLS",
+        "footer-skill-1": "AI Software and Engineering",
+        "footer-skill-2": "Data and Software Foundations",
+        "footer-skill-3": "Product and Creative Technologies",
+        "footer-skill-4": "Leadership and Ecosystem",
+        "footer-contact-title": "GET IN TOUCH",
+        "footer-contact-text": "Want to boost your AI journey?<br>Let's connect and make it happen together.",
+        "footer-contact-btn": "Connect with Ozodbek Salohiddinov",
+        "footer-back-to-top": "Back to top"
     },
     ru: {
         "nav-home": "Главная",
@@ -225,7 +247,18 @@ const translations = {
         "media-v22": "ИИ пейзажное движение II",
         "contact-title": "Для <span class=\"gold-text\">Связи</span>",
         "contact-p": "Свяжитесь со мной следующими способами для сотрудничества.",
-        "footer-text": "&copy; 2026 Озодбек Салохиддинов. Все права защищены."
+        "footer-text": "&copy; 2026 Озодбек Салохиддинов. Все права защищены.",
+        "footer-desc": "Связываем человеческий потенциал с искусственным интеллектом",
+        "footer-quick-links": "БЫСТРЫЕ ССЫЛКИ",
+        "footer-skills": "НАВЫКИ",
+        "footer-skill-1": "ИИ Программное Обеспечение и Инженерия",
+        "footer-skill-2": "Основы Данных и ПО",
+        "footer-skill-3": "Продукт и Креативные Технологии",
+        "footer-skill-4": "Лидерство и Экосистема",
+        "footer-contact-title": "СВЯЖИТЕСЬ СО МНОЙ",
+        "footer-contact-text": "Хотите ускорить свой путь в ИИ?<br>Свяжитесь со мной, и мы сделаем это вместе.",
+        "footer-contact-btn": "Связаться с Озодбеком Салохиддиновым",
+        "footer-back-to-top": "Наверх"
     }
 };
 
