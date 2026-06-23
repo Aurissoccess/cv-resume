@@ -718,15 +718,10 @@ section {
 
 .media-grid {
     display: grid;
-    gap: 2rem;
-}
-
-.vertical-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.horizontal-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .media-card {
@@ -746,12 +741,12 @@ section {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.vertical-grid .media-card video {
+.media-card.vertical video {
     aspect-ratio: 9 / 16;
     object-fit: cover;
 }
 
-.horizontal-grid .media-card video {
+.media-card.horizontal video {
     aspect-ratio: 16 / 9;
     object-fit: cover;
 }
