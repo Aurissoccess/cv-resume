@@ -265,13 +265,76 @@ section {
 }
 
 .hero-content {
-    max-width: 900px;
+    max-width: 950px;
+    z-index: 2;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+/* Liquid Glass Panel */
+.liquid-panel {
+    position: relative;
+    padding: 3.5rem 4rem;
+    background: rgba(10, 10, 10, 0.45);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 215, 0, 0.05);
+    overflow: hidden;
+    animation: floatPanel 6s ease-in-out infinite;
+}
+
+@keyframes floatPanel {
+    0% { transform: translateY(0px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 215, 0, 0.05); }
+    50% { transform: translateY(-8px); box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3); }
+    100% { transform: translateY(0px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(255, 215, 0, 0.05); }
+}
+
+.gold-dust-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.panel-content {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2.2rem;
-    z-index: 2;
-    padding: 0 1.5rem;
+}
+
+.gold-particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255,215,0,0.8) 0%, rgba(255,215,0,0) 70%);
+    border-radius: 50%;
+    animation: floatParticle linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(80px) translateX(0) scale(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.6;
+        transform: translateY(40px) translateX(-10px) scale(1);
+    }
+    80% {
+        opacity: 0.6;
+        transform: translateY(-40px) translateX(10px) scale(1);
+    }
+    100% {
+        transform: translateY(-80px) translateX(0) scale(0);
+        opacity: 0;
+    }
 }
 
 .welcome-text {

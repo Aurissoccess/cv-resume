@@ -365,3 +365,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Gold Dust Particles
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('goldDust');
+    if (!container) return;
+
+    const createParticle = () => {
+        const particle = document.createElement('div');
+        particle.classList.add('gold-particle');
+        
+        const size = Math.random() * 5 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        
+        const duration = Math.random() * 6 + 4;
+        particle.style.animationDuration = `${duration}s`;
+        
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        
+        container.appendChild(particle);
+
+        setTimeout(() => {
+            if (particle.parentNode) particle.parentNode.removeChild(particle);
+            createParticle();
+        }, (duration + 5) * 1000);
+    };
+
+    for (let i = 0; i < 40; i++) {
+        createParticle();
+    }
+});
