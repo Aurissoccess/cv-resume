@@ -627,8 +627,8 @@ section {
 
 .timeline-insta-link {
     color: var(--gold);
-    font-size: 1.5rem;
-    margin-left: 12px;
+    font-size: 1.8rem;
+    margin-left: 15px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: inline-block;
     vertical-align: middle;
