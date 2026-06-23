@@ -397,6 +397,85 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // AJAX Form Submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const submitBtnText = submitBtn.querySelector('span');
+            const submitBtnIcon = submitBtn.querySelector('i');
+            
+            const originalText = submitBtnText ? submitBtnText.innerText : 'Xabar yuborish';
+            const originalIconClass = submitBtnIcon ? submitBtnIcon.className : 'fa-solid fa-paper-plane';
+            
+            // Set loading state
+            submitBtn.disabled = true;
+            if (submitBtnText) submitBtnText.innerText = currentLang === 'uz' ? 'Yuborilmoqda...' : (currentLang === 'ru' ? 'Отправка...' : 'Sending...');
+            if (submitBtnIcon) submitBtnIcon.className = 'fa-solid fa-spinner fa-spin';
+            
+            const formData = new FormData(contactForm);
+            
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showToast(
+                        currentLang === 'uz' ? 'Xabaringiz yuborildi! Rahmat.' : (currentLang === 'ru' ? 'Ваше сообщение отправлено! Спасибо.' : 'Your message has been sent! Thank you.'), 
+                        'success'
+                    );
+                    contactForm.reset();
+                } else {
+                    throw new Error('Response error');
+                }
+            })
+            .catch(error => {
+                console.error('Submission error:', error);
+                showToast(
+                    currentLang === 'uz' ? 'Tarmoq xatosi. Iltimos, Telegram yoki Email orqali bog\'laning!' : (currentLang === 'ru' ? 'Ошибка сети. Свяжитесь через Telegram или Email!' : 'Network error. Please contact via Telegram or Email!'), 
+                    'error'
+                );
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                if (submitBtnText) submitBtnText.innerText = originalText;
+                if (submitBtnIcon) submitBtnIcon.className = originalIconClass;
+            });
+        });
+    }
+
+    // Custom Toast Helper
+    function showToast(message, type) {
+        let toast = document.querySelector('.toast-notification');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            document.body.appendChild(toast);
+        }
+        
+        const iconHTML = type === 'success' 
+            ? '<i class="fa-solid fa-circle-check toast-icon"></i>' 
+            : '<i class="fa-solid fa-triangle-exclamation toast-icon"></i>';
+            
+        toast.className = `toast-notification toast-${type}`;
+        toast.innerHTML = `${iconHTML}<span>${message}</span>`;
+        
+        // Trigger reflow
+        toast.offsetHeight;
+        
+        toast.classList.add('show-toast');
+        
+        setTimeout(() => {
+            toast.classList.remove('show-toast');
+        }, 5000);
+    }
 });
 // Gold Dust Particles (Aquarium Flow Effect)
 document.addEventListener('DOMContentLoaded', () => {
