@@ -1,1 +1,2 @@
 # Exclude large videos that exceed GitHub's 100MB limit
+node_modules
